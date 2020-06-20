@@ -3,25 +3,7 @@ Suite Setup       Open JD
 Suite Teardown    Close All Browsers
 Library           SeleniumLibrary
 Library           Collections
-
-*** Variables ***
-#睡眠时间，保证新打开的网页充分加载
-${time}           1
-#搜索框输入内容，这里限定为MacBook
-${value}          MacBook
-#各类事件的xpath定位
-${link1}          https://www.jd.com/
-${link2}          xpath=//*[@id="ttbar-login"]/a[1]
-${link3}          xpath=//*[@id="kbCoagent"]/ul/li[1]/a/span
-${link4}          xpath=//*[@id="ptlogin_iframe"]
-#需要事先登录qq，并改成自己的xpath
-${link5}          xpath=//*[@id="nick_2265940560"]
-${link6}          xpath=//*[@id="key"]
-${link7}          xpath=//*[@id="search"]/div/div[2]/button
-${link8}          xpath=//*[@id="J_goodsList"]/ul/li[1]/div/div[1]/a/img
-${link9}          xpath=//*[@id="InitCartUrl"]
-${link10}         xpath=//*[@id="GotoShoppingCart"]
-${link11}         xpath=//*[@id="cart-floatbar"]/div/div/div/div[2]/div[4]/div[1]/div/div[1]/a
+Resource          Resource.txt
 
 *** Test Cases ***
 JD
