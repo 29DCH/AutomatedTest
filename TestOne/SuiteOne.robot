@@ -1,4 +1,6 @@
 *** Settings ***
+Suite Setup       Open JD
+Suite Teardown    Close All Browsers
 Library           SeleniumLibrary
 Library           Collections
 
@@ -24,10 +26,6 @@ ${link11}         xpath=//*[@id="cart-floatbar"]/div/div/div/div[2]/div[4]/div[1
 *** Test Cases ***
 JD
     [Documentation]    liujiqiang 基于RF框架的京东自动购物小脚本
-    #打开谷歌浏览器，并进入京东首页
-    open browser    ${link1}    chrome
-    #最大化浏览器窗口
-    maximize browser window
     #点击登录(由于账号密码登录需要滑动滑块验证，所以这里我选择qq快捷登录，所以需要提前登录qq，并把${link5}改成自己的xpath)
     click element    ${link2}
     #点击进入qq快捷登录页面
@@ -61,3 +59,10 @@ JD
     #点击去结算按钮
     click element    ${link11}
     #由于没钱，后面的支付操作就不写啦！
+
+*** Keywords ***
+Open JD
+    #打开谷歌浏览器，并进入京东首页
+    open browser    ${link1}    chrome
+    #最大化浏览器窗口
+    maximize browser window
